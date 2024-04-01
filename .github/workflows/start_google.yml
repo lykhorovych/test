@@ -1,7 +1,7 @@
   name: test google-chrome
 
   on:
-    workflow_dispatch: "start google"
+    workflow_dispatch:
     schedule:
       - cron: "0 15 * * *"
   jobs:
