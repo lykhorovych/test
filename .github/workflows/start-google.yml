@@ -2,9 +2,8 @@
 
   on:
     workflow_dispatch: "start google"
-
     schedule:
-      - cron: "* 1 * * *"
+      - cron: "0 15 * * *"
   jobs:
     start_google:
       runs-on: ubuntu-latest
@@ -14,8 +13,8 @@
           with:
             python-version: "3.x"
         - name: install dependentses
-          run: pip install -- upgrade pip && pip install -r requirements.txt
+          run: pip install -r requirements.txt
         - name: install google-chrome-latest
           run: sudo apt-get install google-chrome-stable
         - name: test
-          run: pytest test
+          run: pytest tests
