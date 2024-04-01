@@ -2,6 +2,7 @@ import pytest
 
 
 def test_title(browser):
-    browser.get("https://rozetka.com.ua/ua/")
+    browser.get("https://www.qa-practice.com/")
 
-    assert browser.title == "Інтернет-магазин ROZETKA™: офіційний сайт найпопулярнішого онлайн-гіпермаркету в Україні"
+    assert browser.current_url == "https://www.qa-practice.com/"
+    assert browser.title == "Home Page | QA Practice"
