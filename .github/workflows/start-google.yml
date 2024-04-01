@@ -1,0 +1,21 @@
+  name: test google-chrome
+
+  on:
+    workflow_dispatch: "start google"
+
+    schedule:
+      - cron: "* 1 * * *"
+  jobs:
+    start_google:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v4
+        - uses: actions/setup-python@v4
+          with:
+            python-version: "3.x"
+        - name: install dependentses
+          run: pip install -- upgrade pip && pip install -r requirements.txt
+        - name: install google-chrome-latest
+          run: sudo apt-get install google-chrome-stable
+        - name: test
+          run: pytest test
