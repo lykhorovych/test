@@ -21,3 +21,9 @@
           run: sudo apt-get install google-chrome-stable
         - name: test
           run: pytest tests
+        - name: commit changes
+          uses: EndBug/add-and-commit@v9
+          with:
+            author_name: oleh lykhorovych
+            message: 'Test seccussfully'
+
